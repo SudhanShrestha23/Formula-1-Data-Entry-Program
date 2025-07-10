@@ -48,6 +48,6 @@ public class Driver {
         return name + "\t" + team + "\t" + grandPrix + "\t" + posFinished + "\t" + fastestLap;
     }
     public String csvFormat() {
-        return name + ", " + team + ", " + grandPrix + ", " + posFinished + ", " + fastestLap;
+        return name + "," + team + "," + grandPrix + "," + posFinished + "," + fastestLap;
     }
 }
