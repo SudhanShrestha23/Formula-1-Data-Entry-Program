@@ -29,4 +29,27 @@ public class DataAnalysisMethods {
             System.out.println("File has incorrect format");
         }
     } 
+
+    public void sortDriversByLap(List<Driver> drivers) {
+        Driver driver1;
+        Driver driver2;
+        for (int i = 0; i < drivers.size(); i++) {
+            for (int j = 0; j < drivers.size(); j++) {
+                if (drivers.get(j).getFastestLap() > drivers.get(j + 1).getFastestLap()) {
+                    driver1 = drivers.get(j);
+                    driver2 = drivers.get(j + 1);
+                    drivers.set(j, driver2);
+                    drivers.set(j + 1, driver1);
+                }
+            }
+        }
+        System.out.println("Sorting completed");
+    }
+
+    public void printArray(List<Driver> drivers) {
+        System.out.println("Driver \tTeam \tGrand-Prix \tPosition-Finished \tFastest-Lap");
+        for (Driver driver: drivers) {
+            driver.toString();
+        }
+    }
 }
