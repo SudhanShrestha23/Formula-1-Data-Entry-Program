@@ -14,20 +14,25 @@ public class Main {
         System.out.println("1. Data Entry Program");
         System.out.println("2. Data Retrival Program");
         choice = sc.nextInt();
+        switch (choice) {
+          case 1:
+            DataEntryProgram.main(args);
+            break;
+          case 2:
+            DataAnalysisProgram.main(args);
+            break;
+          case 3:
+            System.out.println("Exiting Program have a nice day!");
+            break;
+          default:
+            System.out.println("Incorrect value detected");
+        }
+        sc.close();
       } catch (InputMismatchException e) {
           System.out.println("Enter a valid number");
           correctInput = false;
         }
-    } while (!correctInput && (choice != 1 || choice != 2));
+    } while (choice !=3);
     System.out.println("Outside the loop");
-    switch (choice) {
-      case 1:
-        DataEntryProgram.main(args);
-        break;
-      case 2:
-        break;
-      default:
-    }
-    sc.close();
   }
 }
