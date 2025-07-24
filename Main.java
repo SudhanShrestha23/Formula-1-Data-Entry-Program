@@ -9,11 +9,10 @@ public class Main {
     Scanner sc = new Scanner(System.in);
     boolean exitInput = true;
     System.out.println("Welcome to the FIA Formula 1 Data Program");
-    System.out.println("Select an Option");
     int choice;
     do {
       try {
-        System.out.println("test");
+        System.out.println("Select which program you like to run!");
         System.out.println("1. Data Entry Program");
         System.out.println("2. Data Retrival Program");
         System.out.println("3. Exit the program");
@@ -36,7 +35,9 @@ public class Main {
         }
       } catch (InputMismatchException e) {
         System.out.println("Enter a valid number");
-        exitInput = false;
+      } finally {
+          System.out.println("Press any key to quit the program");
+          sc.nextLine();
       }
     } while (exitInput);
     System.out.println("Outside the loop");
