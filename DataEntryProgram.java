@@ -14,7 +14,7 @@ public class DataEntryProgram {
         
         System.out.println("\nWelcome to the FIA Formula 1 Data Entry Program");
         do {
-            System.out.println("What would you like to do");
+            System.out.println("What program would you like to select");
             System.out.println("1. Add Driver Entries");
             System.out.println("2. Display Data");
             System.out.println("3. Write file");
@@ -67,7 +67,5 @@ public class DataEntryProgram {
             }
         } while (correctInput);
         System.out.println("End of the program");
-        sc.close();
     }
 }
-    

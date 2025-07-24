@@ -14,12 +14,13 @@ public class DataAnalysisMethods {
             while (line != null) {
                 fileLine = line.split(",");
                 line = reader.readLine();
-                String driverName = fileLine[0];
-                String teamName = fileLine[1];
-                String grandPrix = fileLine[2];
-                int posFinished = Integer.parseInt(fileLine[3]);
-                float fastestLapTime = Float.parseFloat(fileLine[4]);
-                drivers.add(new Driver(driverName,teamName,grandPrix,posFinished,fastestLapTime));                
+                String driverName = fileLine[0].trim();
+                String teamName = fileLine[1].trim();
+                String carCode = fileLine[2].trim();
+                String grandPrix = fileLine[3].trim();
+                int posFinished = Integer.parseInt(fileLine[4]);
+                float fastestLapTime = Float.parseFloat(fileLine[5]);
+                drivers.add(new Driver(driverName,teamName,carCode,grandPrix,posFinished,fastestLapTime));                
             }
 
             reader.close();
@@ -30,11 +31,12 @@ public class DataAnalysisMethods {
         }
     } 
 
+    //sorting by bubblesort
     public void sortDriversByLap(List<Driver> drivers) {
         Driver driver1;
         Driver driver2;
-        for (int i = 0; i < drivers.size(); i++) {
-            for (int j = 0; j < drivers.size(); j++) {
+        for (int i = 0; i < drivers.size() - 1; i++) {
+            for (int j = 0; j < drivers.size() - i - 1; j++) {
                 if (drivers.get(j).getFastestLap() > drivers.get(j + 1).getFastestLap()) {
                     driver1 = drivers.get(j);
                     driver2 = drivers.get(j + 1);
@@ -47,9 +49,9 @@ public class DataAnalysisMethods {
     }
 
     public void printArray(List<Driver> drivers) {
-        System.out.println("Driver \tTeam \tGrand-Prix \tPosition-Finished \tFastest-Lap");
+        System.out.println("Driver \tTeam \tcarCode \tGrand-Prix \tPosition-Finished \tFastest-Lap");
         for (Driver driver: drivers) {
-            driver.toString();
+           System.out.println(driver.toString());
         }
     }
 }

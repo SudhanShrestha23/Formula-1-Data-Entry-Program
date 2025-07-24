@@ -11,15 +11,17 @@ public class DataEntryMethods {
         String name = sc.nextLine();
         System.out.println("Enter a Team");
         String team = sc.nextLine();
+        System.out.println("Enter a car code");
+        String carCode = sc.nextLine();
         System.out.println("Enter a Grand Prix");
         String grandPrix = sc.nextLine();
-        System.out.println("Enter Driver's position");
+        System.out.println("Enter Driver's position (-1 for DNF)");
         int posFinished = sc.nextInt();
         sc.nextLine();
         System.out.println("Enter Driver's Fastest Lap");
         float fastestLap = sc.nextFloat();
         sc.nextLine();
-        return new Driver(name, team, grandPrix, posFinished, fastestLap);
+        return new Driver(name,team,carCode,grandPrix,posFinished,fastestLap);
     }
 
     public void writeFile(String fileName, List<Driver> drivers) {
