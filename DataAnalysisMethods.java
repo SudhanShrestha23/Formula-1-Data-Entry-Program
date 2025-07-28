@@ -3,12 +3,18 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.List;
+import java.util.Scanner;
 public class DataAnalysisMethods {
-    public void readFile(String file, List<Driver> drivers) {
+    public void readFile(Scanner sc, List<Driver> drivers) {
         try {
             String[] fileLine;
             String line;
-            BufferedReader reader = new BufferedReader(new FileReader(file));
+            String fileName;
+            
+            System.out.println("Enter the name of your file");
+            fileName = sc.nextLine();
+
+            BufferedReader reader = new BufferedReader(new FileReader(fileName));
             line = reader.readLine();
 
             while (line != null) {
@@ -49,9 +55,18 @@ public class DataAnalysisMethods {
     }
 
     public void printArray(List<Driver> drivers) {
-        System.out.println("Driver \tTeam \tcarCode \tGrand-Prix \tPosition-Finished \tFastest-Lap");
+        System.out.println("Driver \t\tTeam \tcarCode \tGrand-Prix \tPosition-Finished \tFastest-Lap");
         for (Driver driver: drivers) {
            System.out.println(driver.toString());
+        }
+    }
+
+    public void findTeamsFromDriver(List<Driver> drivers, String carCode) {
+        System.out.println("Drivers from car code: " + carCode);
+        for (Driver driver: drivers) {
+            if (driver.getCarCode().equals(carCode)) {
+               System.out.println(driver.getName() + " Team: " + driver.getTeam());
+            }
         }
     }
 }
