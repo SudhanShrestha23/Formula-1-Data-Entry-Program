@@ -43,6 +43,9 @@ public class Driver {
     public String getGrandPrix() {
         return grandPrix;
     }
+    public String getCarCode() {
+        return carCode;
+    }
     public int getPosFinished() {
         return posFinished;
     }
